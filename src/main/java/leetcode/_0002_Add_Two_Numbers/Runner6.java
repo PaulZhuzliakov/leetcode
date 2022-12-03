@@ -36,7 +36,7 @@ public class Runner6 {
         ListNode l1 = new ListNode(1, l1_2);
 
 
-        ListNode l2_3 = new ListNode(4);        //5 -> 6 -> 4
+        ListNode l2_3 = new ListNode(4);
         ListNode l2_2 = new ListNode(6, l2_3);
         ListNode l2 = new ListNode(5, l2_2);
 

@@ -1,14 +1,14 @@
 package leetcode._0002_Add_Two_Numbers;
 
-public class Runner {
+public class BetterSolutionRunner {
     public static void main(String[] args) {
 
-        Solution solution = new Solution();
-        ListNode l1_3 = new ListNode(3);        //2 -> 4 -> 3
-        ListNode l1_2 = new ListNode(4, l1_3);
+        BetterSolution solution = new BetterSolution();
+        ListNode l1_3 = new ListNode(1);
+        ListNode l1_2 = new ListNode(0, l1_3);
         ListNode l1 = new ListNode(2, l1_2);
 
-        ListNode l2_3 = new ListNode(4);        //5 -> 6 -> 4
+        ListNode l2_3 = new ListNode(4);
         ListNode l2_2 = new ListNode(6, l2_3);
         ListNode l2 = new ListNode(5, l2_2);
 

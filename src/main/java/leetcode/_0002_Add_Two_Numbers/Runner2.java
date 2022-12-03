@@ -14,7 +14,7 @@ public class Runner2 {
         ListNode l2_4 = new ListNode(9);
         ListNode l2_3 = new ListNode(9, l2_4);
         ListNode l2_2 = new ListNode(9, l2_3);
-        ListNode l2 = new ListNode(9    , l2_2);
+        ListNode l2 = new ListNode(9 , l2_2);
 
         ListNode result = solution.addTwoNumbers(l1, l2);
 
