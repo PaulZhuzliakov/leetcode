@@ -1,4 +1,4 @@
-package leetcode._938_Range_Sum_of_BST;
+package leetcode._0938_Range_Sum_of_BST;
 
 public class Runner {
 
