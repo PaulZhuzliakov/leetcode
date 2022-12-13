@@ -1,4 +1,4 @@
-package leetcode._118_Pascals_Triangle;
+package leetcode._0118_Pascals_Triangle;
 
 import java.util.List;
 
