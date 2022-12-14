@@ -1,8 +1,6 @@
-package leetcode._0206_Reverse_Linked_List;
+package leetcode._0206_Reverse_Linked_List.recursion;
 
-import leetcode._0206_Reverse_Linked_List.Node;
-
-public class Runner {
+public class RecursiveRunner {
     public static void main(String[] args) {
         Node node5 = new Node(5);
         Node node4 = new Node(4, node5);
@@ -10,11 +8,9 @@ public class Runner {
         Node node2 = new Node(2, node3);
         Node node1 = new Node(1, node2);
 
-        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-        Node node = reverseLinkedList.reverseList(node1);
+        RecursiveSolution solution = new RecursiveSolution();
+        Node node = solution.reverseList(node1);
         printListNodes(node);
-
-
     }
 
     public static void printListNodes(Node node) {

@@ -1,11 +1,13 @@
 package leetcode._0206_Reverse_Linked_List;
 
+import leetcode._0206_Reverse_Linked_List.Node;
+
 public class ReverseLinkedList {
-    public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
+    public Node reverseList(Node head) {
+        Node prev = null;
 
         while (head != null) {
-            ListNode next = head.next;
+            Node next = head.next;
             head.next = prev;
             prev = head;
             head = next;
@@ -19,18 +21,18 @@ public class ReverseLinkedList {
 
 
 //  Definition for singly-linked list.
-class ListNode {
+class Node {
     int val;
-    ListNode next;
+    Node next;
 
-    ListNode() {
+    Node() {
     }
 
-    ListNode(int val) {
+    Node(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    Node(int val, Node next) {
         this.val = val;
         this.next = next;
     }
