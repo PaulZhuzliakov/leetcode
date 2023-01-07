@@ -1,4 +1,4 @@
-package leetcode._589_N_ary_Tree_Preorder_Traversal;
+package leetcode._0589_N_ary_Tree_Preorder_Traversal;
 
 import java.util.*;
 
