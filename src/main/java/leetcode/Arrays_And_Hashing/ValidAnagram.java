@@ -1,25 +1,24 @@
 package leetcode.Arrays_And_Hashing;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
+        Map<Character, Integer> map1 = createMap(s);
+        Map<Character, Integer> map2 = createMap(t);
 
-        HashMap<Character, Integer> setS = new HashMap<>();
+        return map1.equals(map2);
+    }
+
+    Map<Character, Integer> createMap(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char charAt = s.charAt(i);
-            setS.computeIfPresent(charAt, (character, integer) -> ++integer);
-            setS.putIfAbsent(charAt, 1);
+            map.computeIfPresent(charAt, (character, integer) -> ++integer);
+            map.putIfAbsent(charAt, 1);
         }
-
-        HashMap<Character, Integer> setT = new HashMap<>();
-        for (int i = 0; i < t.length(); i++) {
-            char charAt = t.charAt(i);
-            setT.computeIfPresent(charAt, (character, integer) -> ++integer);
-            setT.putIfAbsent(charAt, 1);
-        }
-
-        return setS.equals(setT);
+        return map;
     }
 
 
