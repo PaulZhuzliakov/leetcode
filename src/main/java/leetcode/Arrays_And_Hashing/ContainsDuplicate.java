@@ -1,9 +1,9 @@
-package leetcode._01_Arrays_And_Hashing;
+package leetcode.Arrays_And_Hashing;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Contains_Duplicate {
+public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int i : nums) {
@@ -16,7 +16,7 @@ public class Contains_Duplicate {
     }
 
     public static void main(String[] args) {
-        Contains_Duplicate solution = new Contains_Duplicate();
+        ContainsDuplicate solution = new ContainsDuplicate();
         boolean result = solution.containsDuplicate(new int[]{1, 2, 3, 4, 4});
         System.out.println(result);
     }
