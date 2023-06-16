@@ -12,7 +12,7 @@ public class ValidAnagram {
         }
 
         for (int charNumber: charCount) {
-            if (charNumber > 0) {
+            if (charNumber != 0) {
                 return false;
             }
         }
