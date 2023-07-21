@@ -5,25 +5,27 @@ import java.util.*;
 public class TopKFrequentElements {
 
     public int[] topKFrequent(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();    //element,quantity
-
-        for (int i: nums) {
-            map.putIfAbsent(i, 0);
-            map.computeIfPresent(i, (key, value) -> ++value);
+        HashMap<Integer, Integer> map = new HashMap<>(); //K - element; V - Quantity
+        for (int number: nums) {
+            map.put(number, map.getOrDefault(number, 0) + 1);
         }
 
-        return map.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(k)
-                .mapToInt(Map.Entry::getKey)
-                .toArray();
+        PriorityQueue<Map.Entry<Integer, Integer>> priorityQueue = new PriorityQueue<>((o1, o2) -> o2.getValue() - o1.getValue());
+
+        priorityQueue.addAll(map.entrySet());
+
+        int[] output = new int[k];
+        for (int i = 0; i < k; i++) {
+            output[i] = Objects.requireNonNull(priorityQueue.poll()).getKey();
+        }
+
+        return output;
     }
 
     public static void main(String[] args) {
         TopKFrequentElements solution = new TopKFrequentElements();
-        int[] nums = {-1, -1};
-//        int[] nums = {1,1,1,2,2,3};
-        int k = 1;
+        int[] nums = {1,1,1,2,2,3};
+        int k = 2;
         int[] result = solution.topKFrequent(nums, k);
         System.out.println(Arrays.toString(result));
     }
