@@ -4,19 +4,17 @@ import java.util.HashSet;
 
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
+        HashSet<String> seen = new HashSet<>();
         for (int i = 0; i < 9; i++) {
-            HashSet<Character> rows = new HashSet<>();
-            HashSet<Character> columns = new HashSet<>();
-            HashSet<Character> cubes = new HashSet<>();
             for (int j = 0; j < 9; j++) {
-                if (board[i][j] != '.' && !rows.add(board[i][j])) return false;
-
-                if (board[j][i] != '.' && !columns.add(board[j][i])) return false;
-
-                int rowIndex = 3 * (i / 3);
-                int columnIndex = 3 * (i % 3);
-                char c = board[rowIndex + j / 3][columnIndex + j % 3];
-                if (c != '.' && !cubes.add(c)) return false;
+                char currentChar = board[i][j];
+                if (currentChar != '.') {
+                    if (!seen.add(currentChar + " found in row" + i)
+                            || !seen.add(currentChar + " found in column" + j)
+                            || !seen.add(currentChar + " found in cube  " + i/3 + " - " + j/3)) {
+                        return false;
+                    }
+                }
             }
         }
         return true;
