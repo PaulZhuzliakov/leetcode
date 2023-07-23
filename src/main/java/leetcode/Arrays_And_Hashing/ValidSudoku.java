@@ -8,20 +8,19 @@ public class ValidSudoku {
         HashSet<Character> nums = new HashSet<>();
 
         for (int i = 0; i < 9; i++) {
+
             nums.clear();
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] != '.' && !nums.add(board[i][j])) return false;
             }
-        }
 
-        for (int i = 0; i < 9; i++) {
+
             nums.clear();
             for (int j = 0; j < 9; j++) {
                 if (board[j][i] != '.' && !nums.add(board[j][i])) return false;
             }
-        }
 
-        for (int i = 0; i < 9; i++) {
+
             nums.clear();
             for (int j = 0; j < 9; j++) {
                 int rowIndex = 3 * (i / 3);
@@ -29,6 +28,7 @@ public class ValidSudoku {
                 char c = board[rowIndex + j / 3][columnIndex + j % 3];
                 if (c != '.' && !nums.add(c)) return false;
             }
+
         }
         return true;
     }
